@@ -1,0 +1,106 @@
+baseurl = "https://mizuki-tts.com/"
+title = "INFRAX SITE"
+dateFormat = "2006年01月02日"
+
+languageCode = "ja"
+languageName = "日本語"
+
+hasCJKLanguage = true
+defaultContentLanguageInSubdir = true
+defaultContentLanguage = "ja"
+
+# Pagination
+paginate = 3
+paginatePath = "page"
+
+# Theme to use
+theme = "hugo-bootstrap-5"
+
+# Robot.txt
+enableRobotsTXT = true
+
+# Google analytics
+googleAnalytics = ""
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[params]
+  mainSections = ['post']
+  title = "INFRAX.CO.JP"
+  description = "INFRAX.CO.JP: INFRAX.CO.JP とは、... です。"
+  images = ["images/mtts_logo_org.jpg"]
+  # Instagram
+  #url_insta = "https://www.instagram.com/mizuki.tts/"
+  # Twitter
+  #url_nitt = "https://nitter.net/MIZUKI_TTS"
+  #url_twit = "https://twitter.com/MIZUKI_TTS"
+
+[sitemap]
+  filename = 'sitemap.xml'
+  changefreq = 'weekly'
+  priority = 0.8
+
+# Mixin HTML
+[markup]
+  defaultMarkdownHandler = 'goldmark'
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      linkifyProtocol = 'https'
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = 'github'
+      [markup.goldmark.parser.attribute]
+        block = true
+        title = true
+    [markup.goldmark.renderer]
+      hardWraps = false
+      # unsafe = false
+      unsafe = true
+      xhtml = false
+
+[menu]
+  [[menu.main]]
+    identifier = 'home'
+    url = "/"
+    name = "HOME"
+    pre = '<i class="fa-solid fa-house"></i>'
+    weight = 1
+  [[menu.main]]
+    identifier = 'school'
+    url = "/school/"
+    pre = '<i class="fa-solid fa-school"></i>'
+    name = "教室案内"
+    weight = 2
+  [[menu.main]]
+    identifier = 'schedule'
+    url = "/schedule/"
+    pre = '<i class="fa-solid fa-calendar-days"></i>'
+    name = "スケジュール"
+    weight = 3
+  [[menu.main]]
+    identifier = 'stuff'
+    url = "/stuff/"
+    pre = '<i class="fa-solid fa-user-tie"></i>'
+    name = "スタッフ"
+    weight = 4
+  [[menu.main]]
+    identifier = 'post'
+    url = "/post/"
+    pre = '<i class="fa-solid fa-person-running"></i>'
+    name = "ニュース"
+    weight = 5
+  [[menu.main]]
+    identifier = 'access'
+    url = "/access/"
+    pre = '<i class="fa-solid fa-location-dot"></i>'
+    name = "アクセス・お問合せ"
+    weight = 6

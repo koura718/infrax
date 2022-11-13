@@ -1,0 +1,26 @@
+{{ define "main" }}
+
+{{ $truncate := default true .Site.Params.truncate }}
+
+{{ if .Content }}
+<div id="sticky-space" class="" style="height: 0px;"></div>
+
+<section class="blog-post">
+    {{ .Content }}
+</section>
+{{ end }}
+
+{{ $paginator := .Paginate .Pages }}
+{{ range $paginator.Pages }}
+
+    {{ if $truncate }}
+        {{ .Render "summary" }}
+    {{ else }}
+        {{ .Render "content" }}
+    {{ end }}
+
+{{ end }}
+
+{{ partial "paginator" . }}
+
+{{ end }}
