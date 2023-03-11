@@ -1,1 +1,5 @@
-return env.ASSETS.fetch(request);
+export default {
+  fetch(request, env, context) {
+    return new Response('Hello');
+  },
+};
